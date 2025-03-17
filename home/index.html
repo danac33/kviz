@@ -11,55 +11,113 @@
     <div class="nav">
         <div class="logo">Quiz <span class="BiH">BiH</span></div>
         <div class="menu">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Services</a>
+                <a href="#home1" class="a">Početna</a>
+                <a href="#home2" class="a">Upustva</a>
+                <a href="#home3" class="a">Ljestvica</a>
         </div>
         <div class="buttons">
-            <div class="btn" id="btn1">Prijavi se</div>
-            <div class="btn" id="bt2">Registruj se</div>
+            <a class="btn a" id="btn1"  href="http://127.0.0.1:5500/singUp/index.html#" >Prijavi se</a>
+            <a class="btn a" id="btn2" href="http://127.0.0.1:5500/logIn/index.html">Registruj se</a>
         </div>
     </div>
 
 
 
-    <div class="home1">
+    <div class="home1" id="home1">
         <div class="left">
-            <div class="bigText"></div>
-            <div class="smallText"></div>
-            <div class="btn3"></div>
+            <div class="bigText">Pokažite svoje znanje o <span class="BiH">Bosni i Hercegovini</span></div>
+            <div class="smallText">Testirajte svoje znanje o historiji, kulturi i znamenitostima naše predivne domovine! Koliko dobro poznajete Bosnu i Hercegovinu?</div>
+            <div class="btn3">ZAPOCNI KVIZ</div>
         </div>
-        <div class="right"></div>
+        <div class="right"><img src="./photos/home-bg.png" alt="error"></div>
     </div>
 
 
 
-    <div class="home2">
+    <div class="home2" id="home2">
         <div class="top">
             <div class="text-top">
-                <div class="topText"></div>
-                <div class="bottomText"></div>
+                <div class="topText"><img src="./photos/magic_wand.svg" alt="<wand icon>">Kako funkcioniše kviz?</div>
+                <div class="bottomText">U našem kvizu, jednostavno je izazvati sebe i druge! Odaberite kviz, odgovorite na pitanja u zadanom vremenu i osvojite što više tačnih odgovora. Na kraju, možete provjeriti svoj rezultat i uporediti se sa najboljima na leaderboardu. Brzo, zabavno i edukativno!</div>
             </div>
-            <div class="btn4"></div>
+            <div class="btn4-d"><div class="btn4">ZAPOCNI KVIZ</div></div>
         </div>
         <div class="bottom">
-            <div class="img1"></div>
-            <div class="img2"></div>
-            <div class="img3"></div>
-        </div>
+            <div class="card">
+                <div class="card-img img1"></div>
+                <div class="card-text">
+                    <h3>Prijavi se</h3>
+                    <p>Registruj se na Quiz BiH!</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img img2"></div>
+                <div class="card-text">
+                    <h3>Uradi kviz</h3>
+                    <p>Odgovori na sva pitanja koja imamo!</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img img3"></div>
+                <div class="card-text">
+                    <h3>Budi #1</h3>
+                    <p>Osvoji ljestvicu i budi prvi!</p>
+                </div>
+            </div>
     </div>
 
 
 
-    <div class="home3">
-        <div class="innner">
-            <div class="top-inner">
-                <div class="topInnerText"></div>
-                <div class="bottomInnerText"></div>
-                <div class="btn5"></div>
+    <div class="home3" id="home3">
+        <div class="leaderboard-card">
+            <div class="yuh">
+            <h2>Takmičite se i osvajajte vrh!</h2>
+            <p class="subtext">
+                Izazovite svoje prijatelje i igrače širom sveta. Pokažite da ste najbolji i zauzmite svoje 
+                mjesto na leaderboardu!
+            </p>
+            <button class="quiz-btn">Započni kviz</button>
             </div>
 
-            <div class="bottom-inner"></div>
+            <div class="leaderboard">
+                <div class="leaderboard-item">
+                    <span class="rank">#1</span>
+                    <span class="profile"></span>
+                    <span class="name">Jasmin Fajko</span>
+                    <span class="score">150 Bodova</span>
+                </div>
+                <div class="leaderboard-item">
+                    <span class="rank">#2</span>
+                    <span class="profile"></span>
+                    <span class="name">Marko Petrović</span>
+                    <span class="score">140 Bodova</span>
+                </div>
+                <div class="leaderboard-item">
+                    <span class="rank">#3</span>
+                    <span class="profile"></span>
+                    <span class="name">Jasmina Hadzic</span>
+                    <span class="score">125 Bodova</span>
+                </div>
+                <div class="leaderboard-item">
+                    <span class="rank">#4</span>
+                    <span class="profile"></span>
+                    <span class="name">Lejla Majic</span>
+                    <span class="score">120 Bodova</span>
+                </div>
+                <div class="leaderboard-item">
+                    <span class="rank">#5</span>
+                    <span class="profile"></span>
+                    <span class="name">Ivan Kovačević</span>
+                    <span class="score">110 Bodova</span>
+                </div>
+           
+                <div class="leaderboard-item last-card">
+                    <span class="rank">#T1</span>
+                    <span class="profile"></span>
+                    <span class="name">Jasmin Fajko</span>
+                    <span class="score">150 Bodova</span>
+                </div>
+                 </div>
         </div>
     </div>
 
