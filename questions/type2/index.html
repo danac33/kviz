@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="quiz-header">Quiz <span>BiH</span></div>
+    <div class="scoreboard">
+        <div class="score-item">🏆 Bodovi: <span id="Points">point</span></div>
+        <div class="score-item">⏳ Najbolji rezultat: <span id="BestScore">BS</span></div>
+        <div class="score-item">⭐ Streak: <span id="streak">S</span></div>
+        <div class="score-item">⏲️ <span id="time">time</span> s</div>
+    </div>
+    <div class="quiz-container">
+        <div class="top">
+            <div class="space"></div>
+        <div class="question-box">Pitanje <span id="QNum">num</span> od 20</div>
+        <a href="http://127.0.0.1:5500/slides/end/index.html" class="quit-btn a">Završi kviz</a>
+        </div>
+        <div class="question-container">
+            <p><span id="question">QUESTON</span></p>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div class="options">
+                <button id="A">A </button>
+                <button id="B">B </button>
+                <button id="C">C </button>
+                <button id="D">D </button>
+            </div>
+            <br>
+
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
