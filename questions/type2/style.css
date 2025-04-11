@@ -101,6 +101,9 @@ body {
     border: none;
 }
 .options button:active {
+    background-color: white;
+    color: #1565c0;
+    border: 1px solid #1565c0;
     transform: scale(0.9);
 }
 .quit-btn {
