@@ -21,19 +21,17 @@
                 <h2>Quiz <span class="blue">BiH</span></h2>
                 <h3>Prijavite se na vaš račun</h3>
                 </div>
-                <button class="google-btn" onclick="getuser()"><img src="./photos/google.png">Prijavi se putem Google računa</button>
-                <form>
+                <button class="google-btn"><img src="./photos/google.png">Prijavi se putem Google računa</button>
                     <input type="email" id="email" placeholder="Unesite e-mail">
-                    <input type="password" id="password" placeholder="Unesite lozinku">
+                    <input type="password" id="password" placeholder="Unesite lozinku" required minlength="8">
                     <span class="span1"><p>zaboravili ste lozinku?</p><a href="#" class="forgot">Restartuj lozinku</a></span>
-                    <button type="submit" class="login-btn" onclick="loginUser()">Prijavi se</button>
-                </form>
+                    <button class="login-btn" id="submit">Prijavi se</button>
                 <p>Nemate račun? <a href="/logIn/index.html">Registruj se.</a></p>
             </div>
         </div>
     </main>
 
 
-    <script src="./script.js"></script>
+    <script src="./Sscript.js"></script>
 </body>
 </html>

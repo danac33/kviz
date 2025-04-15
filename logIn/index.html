@@ -18,19 +18,18 @@
         <div class="right">
             <h2>Quiz <span class="blue">BiH</span></h2>
             <h2>Registrujte se na Quiz BiH</h2>
-            <form>
-                <input type="email" placeholder="E-mail adresa" class="inputs" required>
-                <input type="text" placeholder="Korisničko ime" class="inputs" required>
-                <input type="password" placeholder="Lozinka" class="inputs" required>
-                <input type="password" placeholder="Ponovi lozinku" class="inputs" required>
-                <button type="submit">Prijavi se</button>
-            </form>
+                <input type="email" placeholder="E-mail adresa" class="inputs" id="email" required>
+                <input type="text" placeholder="Korisničko ime" class="inputs" id="name" required>
+                <input type="password" placeholder="Lozinka" class="inputs" id="password" required minlength="8">
+                <input type="password" placeholder="Ponovi lozinku" class="inputs" id="confirm-password" required>
+                <div class="print"></div>
+                <button type="submit" id="login-button">Prijavi se</button>
             <div class="link">
                 <p>Već imate račun? <a href="/singUp/">Prijavi se</a></p>
             </div>
         </div>
     </div>
 
-    <script src="/javaScript/fe.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
