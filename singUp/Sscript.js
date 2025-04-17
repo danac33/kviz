@@ -16,7 +16,7 @@ try{
         }),
     })
     const data = await response.json();
-    localStorage.setItem("token", response.token);
+    localStorage.setItem("token", data.token);
     console.log(data);
 }catch(error){
     console.error("Error:", error);

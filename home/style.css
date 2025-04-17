@@ -780,6 +780,10 @@ body {
         margin-top: 5vh;
         border-radius: 0;
     }
+    .leaderboard{
+        width: 100%;
+
+    }
     .leaderboard-container {
         display: flex;
         justify-content: center;
