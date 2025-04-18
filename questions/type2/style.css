@@ -100,12 +100,7 @@ body {
     color: white;
     border: none;
 }
-.options button:active {
-    background-color: white;
-    color: #1565c0;
-    border: 1px solid #1565c0;
-    transform: scale(0.9);
-}
+
 .quit-btn {
     display: flex;
     justify-content: center;
@@ -125,11 +120,6 @@ body {
     background-color: #1565c0;
     border: 1px solid white;
     color: white;
-}
-.quit-btn:active {
-    background-color: white;
-    color: #1565c0;
-    transform: scale(0.9);
 }
 .space{
     width: 20%;

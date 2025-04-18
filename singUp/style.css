@@ -125,3 +125,10 @@ input {
     justify-content: space-between;
     align-items: center;
 }
+#errorF{
+    width: 100%;
+    height: 10%;
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 5px
+}

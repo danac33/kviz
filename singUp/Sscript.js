@@ -1,4 +1,4 @@
-
+const errorF = document.getElementById("errorF");
 const btn = document.getElementById("submit");
 
 async function login() {
@@ -17,10 +17,14 @@ try{
     })
     const data = await response.json();
     localStorage.setItem("token", data.token);
-    console.log(data);
+    if(!data.error){
+        errorF.innerHTML = "Invalid email or password";
+    }
+    if(data.token){
+        window.location.href = "/home/index.html"
+    }
 }catch(error){
     console.error("Error:", error);
 }
 }
-
 btn.addEventListener("click", login)

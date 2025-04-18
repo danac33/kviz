@@ -1,5 +1,6 @@
 const loginButton = document.getElementById("login-button");
 const print = document.getElementById("print");
+const ereorF = document.getElementById("errorF");
 
 async function register() {
   const Email = document.getElementById("email").value;
@@ -25,7 +26,12 @@ async function register() {
         }
       );
       const data = await response.json();
-      console.log(data);
+      if(!data.error){
+        errorF.innerHTML = data.message;
+    }
+    if(data.token){
+      window.location.href = "/home/index.html"
+  }
     } catch (error) {
       console.error("Error:", error);
     }
