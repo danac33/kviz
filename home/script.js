@@ -13,21 +13,21 @@ startBtn1.addEventListener("click", function() {
     if(token) {
         window.location.href = "../slides/start/index.html";
     } else {
-        window.location.href = "../login/index.html";
+        window.location.href = "../logIn/index.html";
     }
 } )
 startBtn2.addEventListener("click", function() {
     if(token) {
         window.location.href = "../slides/start/index.html";
     } else {
-        window.location.href = "../login/index.html";
+        window.location.href = "../logIn/index.html";
     }
 })
 startBtn3.addEventListener("click", function() {
     if(token) {
         window.location.href = "../slides/start/index.html";
     } else {
-        window.location.href = "../login/index.html";
+        window.location.href = "../logIn/index.html";
     }
 })
 

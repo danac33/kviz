@@ -10,6 +10,10 @@ const AnsB = document.getElementById("B");
 const AnsC = document.getElementById("C");
 const AnsD = document.getElementById("D");
 
+
+savePoints = () => {
+    localStorage.setItem("points", j);
+}
 async function getQuestion() {
   try {
     const response = await fetch(
@@ -61,14 +65,14 @@ async function checkAnswer(Ans) {
         i++;
         if(data.correct) {
             j++;
-            getQuestion()
+            getQuestion() 
         } else {
             localStorage.setItem("points", j);
-            window.location.href = "../slides/end/index.html";
+            window.location.href = "../../slides/end/index.html";
         }
         if(i===21) {
           localStorage.setItem("points", j);
-          window.location.href = "../slides/end/index.html";
+          window.location.href = "../../slides/end/index.html";
       }
     } catch (error) {
         console.error("Error:", error);

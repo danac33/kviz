@@ -30,7 +30,7 @@ async function register() {
         errorF.innerHTML = data.message;
     }
     if(data.token){
-      window.location.href = "/home/index.html"
+      window.location.href = "../home/index.html"
   }
     } catch (error) {
       console.error("Error:", error);
