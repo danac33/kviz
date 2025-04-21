@@ -23,7 +23,6 @@ async function getQuestion() {
       }
     );
     const data = await response.json();
-    console.log(data);
 
     question.innerHTML = data.question.title;
     AnsA.innerHTML = data.question.options[0].text;
@@ -45,7 +44,6 @@ getQuestion();
 
 
 async function checkAnswer(Ans) {
-
     try {
         const response = await fetch("https://quiz-be-zeta.vercel.app/game/answer", {
             method: "POST",
