@@ -64,11 +64,11 @@ async function checkAnswer(Ans) {
             getQuestion()
         } else {
             localStorage.setItem("points", j);
-            window.location.href = "/slides/end/index.html";
+            window.location.href = "../slides/end/index.html";
         }
         if(i===21) {
           localStorage.setItem("points", j);
-          window.location.href = "/slides/end/index.html";
+          window.location.href = "../slides/end/index.html";
       }
     } catch (error) {
         console.error("Error:", error);

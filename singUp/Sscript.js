@@ -21,7 +21,7 @@ try{
         errorF.innerHTML = "Invalid email or password";
     }
     if(data.token){
-        window.location.href = "/home/index.html"
+        window.location.href = "../home/index.html"
     }
 }catch(error){
     console.error("Error:", error);
