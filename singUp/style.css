@@ -132,3 +132,34 @@ input {
     font-size: 0.8rem;
     margin-top: 5px
 }
+
+@media  screen and (max-width: 760px) {
+    .span1 {
+        font-size: 0.7rem;
+    }
+    .textL {
+        font-size: 0.6rem;
+    }
+    .text {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body{
+        height: 100vh;
+        width: 100vw;
+        padding: 0;
+    }
+    .container{
+        height: 100%;
+        width: 100%;
+    }
+    .left {
+        display: none;
+    }
+    .right {
+        width: 100%;
+        height: 100%;
+    }
+}

@@ -94,3 +94,30 @@ p {
     color: white;
     transform: scale(0.9);
 }
+@media  screen and (max-width: 900px) {
+    .btn{
+        height: 10vh;
+    }
+}
+@media  screen and (max-width: 550px) {
+    body{
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+    .container{
+        width: 100vw;
+        height: 100vh;
+        padding: 0;
+    }
+    .points{
+        width: 50%;
+    }
+    p{
+        font-size: 1.2rem;
+    }
+    .btn{
+        width: 50%;
+    }
+}
