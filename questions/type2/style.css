@@ -187,4 +187,9 @@ body {
     .options button {
         height: 15%;
     }
+    .options button:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+    }
 }
