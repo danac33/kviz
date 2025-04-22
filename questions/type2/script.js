@@ -1,8 +1,8 @@
 let i =1;
-let bestScore = localStorage.getItem("bestScore") || 0;
+let bestScore = localStorage.getItem("bestScore") ?? 0;
 let j = 0;
-let timeLeft = 30;
-let timerId = setInterval(countdown, 1000);
+let timeLeft = null;
+let timerId = null;
 const question = document.getElementById("question");
 const QNum = document.getElementById("QNum");
 const Points = document.getElementById("Points");
@@ -20,7 +20,6 @@ savePoints = () => {
 }
 
 async function getQuestion() {
-  bScore.innerHTML = bestScore;
   try {
     const response = await fetch(
       " https://quiz-be-zeta.vercel.app/game/start",
@@ -30,24 +29,21 @@ async function getQuestion() {
           "Content-Type": "application/json",
           Authorization: localStorage.getItem("token"),
         },
-        body: JSON.stringify({
-          bestScore: localStorage.getItem("bestScore"),
-      }),
+
       }
     );
     const data = await response.json()
+    console.log(data)
 
     question.innerHTML = data.question.title;
     AnsA.innerHTML = data.question.options[0].text;
     AnsB.innerHTML = data.question.options[1].text;
     AnsC.innerHTML = data.question.options[2].text;
     AnsD.innerHTML = data.question.options[3].text;
-    QNum.innerHTML = i;
-    Points.innerHTML = j;
+
 
     localStorage.setItem("gameId", data.gameId);
     localStorage.setItem("questionId", data.question._id);
-    localStorage.setItem("bestScore", data.bestScore);
 
 
   } catch (error) {
@@ -58,6 +54,8 @@ getQuestion();
 
 
 async function checkAnswer(Ans) {
+  bScore.innerHTML = bestScore;
+  clearTimeout(timerId);
     try {
         const response = await fetch("https://quiz-be-zeta.vercel.app/game/answer", {
             method: "POST",
@@ -76,12 +74,23 @@ async function checkAnswer(Ans) {
         
         if(data.correct) {
             j++;
-            timeLeft+=3;
             if(j>bestScore) {
               bestScore = j;
               localStorage.setItem("bestScore", j);
             }
-            getQuestion()
+            timeLeft = data.nextQuestion.timeLimit;
+            timerId = setInterval(countdown, 1000);
+            countdown()
+
+            QNum.innerHTML = i;
+            Points.innerHTML = j;
+        
+            question.innerHTML = data.nextQuestion.title;
+            AnsA.innerHTML = data.nextQuestion.options[0].text;
+            AnsB.innerHTML = data.nextQuestion.options[1].text;
+            AnsC.innerHTML = data.nextQuestion.options[2].text;
+            AnsD.innerHTML = data.nextQuestion.options[3].text;
+            
         } else {
             localStorage.setItem("points", j);
             location.replace("../../slides/end/index.html")
@@ -103,6 +112,7 @@ AnsD.onclick = () => checkAnswer(AnsD.innerHTML);
 function countdown() {
   if (timeLeft == -1) {
     clearTimeout(timerId);
+    localStorage.setItem("points", j);
     location.replace("../../slides/end/index.html")
   } else {
     time.innerHTML = timeLeft;

@@ -4,6 +4,7 @@ const startBtn1 = document.getElementById("startBtn1");
 const startBtn2 = document.getElementById("startBtn2");
 const startBtn3 = document.getElementById("startBtn3");
 const buttons = document.getElementById("buttons");
+const logOut = document.getElementById("odjavi");
 const token = localStorage.getItem("token");
 const logo = document.getElementById("nav");
 
@@ -11,7 +12,16 @@ if(token) {
     btn1.style.display = "none";
     btn2.style.display = "none";
     logo.style.display = "flex";
+    logOut.style.visibility = "inline-block";
+} else {
+    logOut.style.display = "none";
 }
+
+logout = () =>{
+    localStorage.clear();
+    location.reload()
+}
+
 startBtn1.addEventListener("click", function() {
     if(token) {
         window.location.href = "../slides/start/index.html";

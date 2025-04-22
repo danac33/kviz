@@ -17,6 +17,11 @@ body {
     height: 350vh;
 }
 
+#odjavi {
+    display: flex;
+    visibility: none;
+}
+
 .BiH {
     color: #007bff;
 }
@@ -678,6 +683,9 @@ body {
     }
     #btn2 {
         display: none;
+    }
+    #odjavi{
+        width: 100%;
     }
 
 
