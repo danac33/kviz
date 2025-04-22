@@ -30,9 +30,12 @@ async function getQuestion() {
           "Content-Type": "application/json",
           Authorization: localStorage.getItem("token"),
         },
+        body: JSON.stringify({
+          bestScore: localStorage.getItem("bestScore"),
+      }),
       }
     );
-    const data = await response.json();
+    const data = await response.json()
 
     question.innerHTML = data.question.title;
     AnsA.innerHTML = data.question.options[0].text;
@@ -44,6 +47,7 @@ async function getQuestion() {
 
     localStorage.setItem("gameId", data.gameId);
     localStorage.setItem("questionId", data.question._id);
+    localStorage.setItem("bestScore", data.bestScore);
 
 
   } catch (error) {

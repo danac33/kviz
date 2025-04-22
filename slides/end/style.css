@@ -117,6 +117,9 @@ p {
     p{
         font-size: 1.2rem;
     }
+    .emoji{
+        height: 35%;
+    }
     .btn{
         width: 50%;
     }

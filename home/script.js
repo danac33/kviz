@@ -10,7 +10,6 @@ const logo = document.getElementById("nav");
 if(token) {
     btn1.style.display = "none";
     btn2.style.display = "none";
-    buttons.style.display = "none";
     logo.style.display = "flex";
 }
 startBtn1.addEventListener("click", function() {
@@ -37,7 +36,6 @@ startBtn3.addEventListener("click", function() {
 
 async function getLeaderboard() {
     const last = document.getElementById("last");
-    const nameL= document.getElementById("name-l");
     const name1 = document.getElementById("name-1");
     const name2 = document.getElementById("name-2");
     const name3 = document.getElementById("name-3");
@@ -49,7 +47,6 @@ async function getLeaderboard() {
     const Bscore3 = document.getElementById("Bscore-3");
     const Bscore4 = document.getElementById("Bscore-4");
     const Bscore5 = document.getElementById("Bscore-5");
-    const BscoreL = document.getElementById("Bscore-l");
     const myBscore = localStorage.getItem("bestScore");
 
 
@@ -77,11 +74,36 @@ async function getLeaderboard() {
         Bscore3.innerHTML =`best score: ${data[2].bestScore}`;
         Bscore4.innerHTML =`best score: ${data[3].bestScore}`;
         Bscore5.innerHTML =`best score: ${data[4].bestScore}`;
-        BscoreL.innerHTML = `my best score: ${myBscore}`;
 
 
     }catch (error) {
         console.error("Error fetching leaderboard:", error);
     }
 }
+async function getUser() {
+    try{
+        const response = await fetch("https://quiz-be-zeta.vercel.app/auth/profile", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`,
+            },
+        })
+        const data = await response.json();
+        console.log(data);
+
+        const username = data.username;
+        const bestScore = data.bestScore;
+        const email = data.email;
+        const nameL= document.getElementById("name-l");
+        const BscoreL = document.getElementById("Bscore-l");
+
+        nameL.innerHTML = username;
+        BscoreL.innerHTML = `best score: ${bestScore}`;
+        
+    } catch (error) {
+        console.error("Error fetching user data:", error);
+    }
+}
 getLeaderboard()
+getUser()
