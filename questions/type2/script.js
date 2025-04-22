@@ -40,6 +40,8 @@ async function getQuestion() {
     AnsB.innerHTML = data.question.options[1].text;
     AnsC.innerHTML = data.question.options[2].text;
     AnsD.innerHTML = data.question.options[3].text;
+    QNum.innerHTML = i;
+        Points.innerHTML = j;
 
 
     localStorage.setItem("gameId", data.gameId);
@@ -55,6 +57,7 @@ getQuestion();
 
 async function checkAnswer(Ans) {
   bScore.innerHTML = bestScore;
+  i++;
   clearTimeout(timerId);
     try {
         const response = await fetch("https://quiz-be-zeta.vercel.app/game/answer", {
@@ -70,7 +73,8 @@ async function checkAnswer(Ans) {
             }),
         })
         const data = await response.json();
-        i++;
+
+        QNum.innerHTML = i;
         
         if(data.correct) {
             j++;
@@ -80,9 +84,6 @@ async function checkAnswer(Ans) {
             }
             timeLeft = data.nextQuestion.timeLimit;
             timerId = setInterval(countdown, 1000);
-            countdown()
-
-            QNum.innerHTML = i;
             Points.innerHTML = j;
         
             question.innerHTML = data.nextQuestion.title;
@@ -90,6 +91,8 @@ async function checkAnswer(Ans) {
             AnsB.innerHTML = data.nextQuestion.options[1].text;
             AnsC.innerHTML = data.nextQuestion.options[2].text;
             AnsD.innerHTML = data.nextQuestion.options[3].text;
+
+            localStorage.setItem("questionId", data.nextQuestion._id);
             
         } else {
             localStorage.setItem("points", j);
