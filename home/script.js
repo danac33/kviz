@@ -100,7 +100,6 @@ async function getUser() {
             },
         })
         const data = await response.json();
-        console.log(data);
 
         const username = data.username;
         const bestScore = data.bestScore;

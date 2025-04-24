@@ -1,5 +1,5 @@
 let i =1;
-let bestScore = localStorage.getItem("bestScore") ?? 0;
+let bestScore = parseInt(localStorage.getItem("bestScore")) || 0;
 let j = 0;
 let timeLeft = null;
 let timerId = null;
@@ -9,10 +9,13 @@ const Points = document.getElementById("Points");
 const Streak = document.getElementById("streak");
 const time = document.getElementById("time");
 const bScore = document.getElementById("BestScore");
+bScore.innerHTML = bestScore;
 const AnsA = document.getElementById("A");
 const AnsB = document.getElementById("B");
 const AnsC = document.getElementById("C");
 const AnsD = document.getElementById("D");
+
+
 
 savePoints = () => {
     localStorage.setItem("points", j);
@@ -29,11 +32,9 @@ async function getQuestion() {
           "Content-Type": "application/json",
           Authorization: localStorage.getItem("token"),
         },
-
       }
     );
-    const data = await response.json()
-    console.log(data)
+    const data = await response.json();
 
     question.innerHTML = data.question.title;
     AnsA.innerHTML = data.question.options[0].text;
@@ -41,12 +42,17 @@ async function getQuestion() {
     AnsC.innerHTML = data.question.options[2].text;
     AnsD.innerHTML = data.question.options[3].text;
     QNum.innerHTML = i;
-        Points.innerHTML = j;
-
+    Points.innerHTML = j;
 
     localStorage.setItem("gameId", data.gameId);
     localStorage.setItem("questionId", data.question._id);
 
+    clearInterval(timerId);
+    timeLeft = data.question.timeLimit ?? 30;
+    time.innerHTML = timeLeft;
+    timerId = setInterval(countdown, 1000);
+
+    bScore.innerHTML = bestScore;
 
   } catch (error) {
     console.error("Error:", error);
@@ -78,10 +84,11 @@ async function checkAnswer(Ans) {
         
         if(data.correct) {
             j++;
-            if(j>bestScore) {
+            if(j > bestScore) {
               bestScore = j;
               localStorage.setItem("bestScore", j);
             }
+            bScore.innerHTML = bestScore;
             timeLeft = data.nextQuestion.timeLimit;
             timerId = setInterval(countdown, 1000);
             Points.innerHTML = j;

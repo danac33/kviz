@@ -96,7 +96,7 @@ p {
 }
 @media  screen and (max-width: 900px) {
     .btn{
-        height: 10vh;
+        height: 20px;
     }
 }
 @media  screen and (max-width: 550px) {
