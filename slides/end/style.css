@@ -95,8 +95,15 @@ p {
     transform: scale(0.9);
 }
 @media  screen and (max-width: 900px) {
+    body{
+        padding: 0;
+        margin: 0;
+    }
     .btn{
-        height: 20px;
+        height: 40px;
+    }
+    .points{
+        height: 40px;
     }
 }
 @media  screen and (max-width: 550px) {
@@ -109,7 +116,7 @@ p {
     .container{
         width: 100vw;
         height: 100vh;
-        padding: 0;
+
     }
     .points{
         width: 50%;
