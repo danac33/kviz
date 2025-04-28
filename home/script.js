@@ -131,7 +131,7 @@ function carousel() {
     myIndex = 1;
   }
   x[myIndex - 1].style.display = "block";
-  carouselInterval = setTimeout(carousel, 3500);
+  carouselInterval = setTimeout(carousel, 3000);
 }
 const mediaQuery = window.matchMedia("(max-width: 400px)");
 function handleScreenChange(e) {

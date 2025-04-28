@@ -133,6 +133,17 @@ input {
     margin-top: 5px
 }
 
+.eye {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+
 @media  screen and (max-width: 760px) {
     .span1 {
         font-size: 0.7rem;

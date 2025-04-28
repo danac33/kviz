@@ -1,6 +1,13 @@
 const errorF = document.getElementById("errorF");
 const btn = document.getElementById("submit");
+const togglePassword = document.getElementById('togglePassword');
+const passwordInput = document.getElementById('password');
 
+togglePassword.addEventListener('click', function () {
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    togglePassword.src = type === 'password' ? './photos/eye.svg' : './photos/closed-eye.png';
+    passwordInput.setAttribute('type', type);
+});
 async function login() {
     const password = document.getElementById("password").value;
     const email = document.getElementById("email").value;
@@ -27,4 +34,8 @@ try{
     console.error("Error:", error);
 }
 }
-btn.addEventListener("click", login)
+const form = document.querySelector("form.right");
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    login();
+});

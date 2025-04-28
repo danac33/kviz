@@ -823,7 +823,9 @@ body {
     }
     .leaderboard{
         width: 100%;
-
+    }
+    .subtext{
+        font-size: 0.6rem;
     }
     .leaderboard-container {
         display: flex;

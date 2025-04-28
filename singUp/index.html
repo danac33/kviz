@@ -15,18 +15,21 @@
                     Najbolji način da naučiš nešto novo jeste da se zabaviš radeći to.
                 </div>
             </div>
-            <div class="right">
+            <form class="right">
                 <div class="title">
                 <h2>Quiz <span class="blue">BiH</span></h2>
                 <h3>Prijavite se na vaš račun</h3>
                 </div>
                     <input type="email" id="email" placeholder="Unesite e-mail">
-                    <input type="password" id="password" placeholder="Unesite lozinku" required minlength="8">
+                    <div style="position: relative;">
+                        <input type="password" id="password" placeholder="Unesite lozinku" required minlength="8">
+                        <img src="./photos/eye.svg" id="togglePassword" class="eye">
+                      </div>
                     <span id="errorF"></span>
                     <span class="span1"><p>zaboravili ste lozinku?</p><a href="#" class="forgot">Restartuj lozinku</a></span>
-                    <button class="login-btn" id="submit">Prijavi se</button>
+                    <button class="login-btn" id="submit" type="submit">Prijavi se</button>
                 <p class="textL">Nemate račun? <a href="../logIn/index.html">Registruj se.</a></p>
-            </div>
+            </form>
         </div>
 
 
