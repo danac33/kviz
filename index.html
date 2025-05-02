@@ -3,9 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <script src="./script.js"></script>
+
+        <div class="container">
+            <video class="left" autoplay muted loop>
+                <source src="./photos/video.mp4" type="video/mp4">
+            </video>
+            <form class="right">
+                <div class="title">
+                <h2>Quiz <span class="blue">BiH</span></h2>
+                <h3>Prijavite se na vaš račun</h3>
+                </div>
+                    <input type="email" id="email" placeholder="Unesite e-mail">
+                    <div style="position: relative;width: 100% ;">
+                        <input type="password" id="password" placeholder="Unesite lozinku" required minlength="8">
+                        <img src="./photos/eye.svg" id="togglePassword" class="eye">
+                      </div>
+                    <span id="errorF"></span>
+                    <span class="span1"><p>zaboravili ste lozinku?</p><a href="../logIn/index.html" class="forgot">Restartuj lozinku</a></span>
+                    <button class="login-btn" id="submit" type="submit">Prijavi se</button>
+                <p class="textL">Nemate račun? <a href="../logIn/index.html">Registruj se.</a></p>
+            </form>
+        </div>
+
+
+    <script src="./Sscript.js"></script>
 </body>
 </html>
