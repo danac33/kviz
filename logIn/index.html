@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <video class="left" autoplay muted loop>
+            <source src="./photos2/video.mp4" type="video/mp4">
+        </video>
+        <form class="right">
+            <div class="title">
+            <h2>Quiz <span class="blue">BiH</span></h2>
+            <h2>Registrujte se na Quiz BiH</h2>
+            </div>
+                <input type="email" placeholder="E-mail adresa" class="inputs" id="email" required>
+                <input type="text" placeholder="Korisničko ime" class="inputs" id="name" required>
+                <div style="position: relative; width: 100% ">
+                    <input type="password" placeholder="Lozinka" class="inputs" id="password" required minlength="8">
+                    <img src="./photos2/eye.svg" id="togglePassword" class="eye">
+                  </div>
+                  
+                  <div style="position: relative;width: 100% ">
+                    <input type="password" placeholder="Ponovi lozinku" class="inputs" id="confirm-password" required>
+                    <img src="./photos2/eye.svg" id="toggleConfirmPassword" class="eye">
+                  </div>
+                <div id="errorF"></div>
+                <button type="submit" id="login-button">Prijavi se</button>
+            <div class="link">
+                <p>Već imate račun? <a href="../singUp/">Prijavi se</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
