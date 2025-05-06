@@ -18,8 +18,13 @@ body {
 }
 
 #odjavi {
+    color: #007bff;
     display: flex;
     visibility: none;
+}
+#odjavi:hover {
+    color: white;
+    background-color: #007bff;
 }
 
 .BiH {
@@ -33,8 +38,10 @@ body {
 }
 
 .a:hover {
+    color: #007bff;
     transform: scale(1.1);
 }
+
 
 
 .nav {
