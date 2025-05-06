@@ -4,6 +4,7 @@ const ereorF = document.getElementById("errorF");
 const togglePassword = document.getElementById('togglePassword');
 const passwordInput = document.getElementById('password');
 
+
 togglePassword.addEventListener('click', function () {
     const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
     togglePassword.src = type === 'password' ? './photos2/eye.svg' : './photos2/closed-eye.png';

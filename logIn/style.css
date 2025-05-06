@@ -1,3 +1,5 @@
+
+
 body {
     display: flex;
     justify-content: center;
@@ -8,6 +10,14 @@ body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #fff, #f0f4ff);
     overflow: hidden;
+}
+
+input[type='text'],
+input[type='number'],
+input[type='email'],
+input[type='password'],
+textarea {
+  font-size: 16px;
 }
 
 video::-internal-media-controls {
