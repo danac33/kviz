@@ -3,6 +3,12 @@ const btn = document.getElementById("submit");
 const togglePassword = document.getElementById('togglePassword');
 const passwordInput = document.getElementById('password');
 
+window.addEventListener('load', () => {
+    const loader = document.getElementById('right-loader');
+    if (loader) {
+        loader.style.display = 'none';
+    }
+  });
 
 
 togglePassword.addEventListener('click', function () {
@@ -41,3 +47,4 @@ form.addEventListener("submit", function(event) {
     event.preventDefault();
     login();
 });
+
