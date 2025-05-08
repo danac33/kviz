@@ -278,6 +278,7 @@ body {
 }
 
 .bottomText {
+    margin-top: 2%;
     margin-left: 2%;
     font-size: 0.8rem;
     width: 80%;

@@ -11,7 +11,7 @@
     <div class="quiz-header">Quiz <span>BiH</span></div>
     <div class="scoreboard">
         <div class="one">
-        <div class="score-item">🏆 Bodovi: <span id="Points">point</span></div>
+        <div class="score-item">🏆 Bodovi: <span id="Points"></span></div>
         <div class="score-item">⏳ Najbolji rezultat: <span id="BestScore"></span></div>
         </div>
         <div class="score-item">⏲️ <span id="time"></span> s</div>
@@ -22,11 +22,11 @@
           </div>
         <div class="top">
             <div class="space"></div>
-        <div class="question-box">Pitanje <span id="QNum">num</span></div>
-        <a onclick="savePoints()" class="quit-btn a">Završi kviz</a>
+        <div class="question-box">Pitanje <span id="QNum"></span></div>
+        <a onclick="savePoints(); quit()" class="quit-btn a">Završi kviz</a>
         </div>
         <div class="question-container">
-            <p><span id="question">QUESTON</span></p>
+            <p><span id="question"></span></p>
             <div class="options">
                 <button id="A">A </button>
                 <button id="B">B </button>

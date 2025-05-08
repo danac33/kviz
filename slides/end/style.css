@@ -104,6 +104,16 @@
       color: inherit;
       transition: all 0.3s ease;
   }
+
+  #Points {
+    padding-top: 2px;
+}
+#time{
+    padding-top: 2px;
+}
+#BestScore {
+    padding-top: 2px;
+}
   
   body {
       display: flex;

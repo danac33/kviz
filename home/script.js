@@ -1,5 +1,6 @@
 let quizStartRequested = false;
 
+
 const btn1 = document.getElementById("btn1");
 const btn2 = document.getElementById("btn2");
 const startBtn1 = document.getElementById("startBtn1");
@@ -166,4 +167,5 @@ handleScreenChange(mediaQuery);
   function closePopup() {
     document.getElementById("quizPopup").style.display = "none";
   }
+
 

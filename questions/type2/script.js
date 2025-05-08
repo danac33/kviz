@@ -19,6 +19,9 @@ savePoints = () => {
   localStorage.setItem("points", j);
   location.replace("../../slides/end/index.html");
 };
+quit= () =>{
+  localStorage.setItem("quitT", true);
+}
 
 async function getQuestion() {
   document.getElementById("question-loader").style.display = "flex";
@@ -48,7 +51,7 @@ async function getQuestion() {
 
     clearInterval(timerId);
     timeLeft = data.question.timeLimit ?? 30;
-    time.innerHTML = timeLeft;
+    time.innerHTML = "00:"+timeLeft;
     timerId = setInterval(countdown, 1000);
 
     bScore.innerHTML = bestScore;
@@ -114,6 +117,7 @@ async function checkAnswer(Ans) {
       localStorage.setItem("questionId", data.nextQuestion._id);
     } else {
       localStorage.setItem("points", j);
+      localStorage.setItem("QuestionT", true);
       location.replace("../../slides/end/index.html");
     }
     document.getElementById("question-loader").style.display = "none";
@@ -132,9 +136,13 @@ function countdown() {
   if (timeLeft == -1) {
     clearTimeout(timerId);
     localStorage.setItem("points", j);
+    localStorage.setItem("timeT", true);
     location.replace("../../slides/end/index.html");
+  } else if(timeLeft < 10){
+    time.innerHTML = "00:0"+timeLeft;
+    timeLeft--;
   } else {
-    time.innerHTML = timeLeft;
+    time.innerHTML = "00:"+timeLeft;
     timeLeft--;
   }
 }
