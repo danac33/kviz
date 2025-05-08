@@ -21,6 +21,7 @@ savePoints = () => {
 };
 
 async function getQuestion() {
+  document.getElementById("question-loader").style.display = "flex";
   try {
     const response = await fetch(
       " https://quiz-be-zeta.vercel.app/game/start",
@@ -51,7 +52,9 @@ async function getQuestion() {
     timerId = setInterval(countdown, 1000);
 
     bScore.innerHTML = bestScore;
+    document.getElementById("question-loader").style.display = "none";
   } catch (error) {
+    document.getElementById("question-loader").style.display = "none";
     console.error("Error:", error);
   }
 }
@@ -61,6 +64,7 @@ async function checkAnswer(Ans) {
   bScore.innerHTML = bestScore;
   i++;
   clearTimeout(timerId);
+  document.getElementById("question-loader").style.display = "flex";
   try {
     const response = await fetch(
       "https://quiz-be-zeta.vercel.app/game/answer",
@@ -98,7 +102,7 @@ async function checkAnswer(Ans) {
         return;
       }
 
-      timeLeft = data.nextQuestion.timeLimit;
+      timeLeft = data.nextQuestion.timeLimit-1;
       timerId = setInterval(countdown, 1000);
 
       question.innerHTML = data.nextQuestion.title;
@@ -112,9 +116,11 @@ async function checkAnswer(Ans) {
       localStorage.setItem("points", j);
       location.replace("../../slides/end/index.html");
     }
+    document.getElementById("question-loader").style.display = "none";
   } catch (error) {
     console.error("Error:", error);
     alert("An error occurred while checking the answer.");
+    document.getElementById("question-loader").style.display = "none";
   }
 }
 AnsA.onclick = () => checkAnswer(AnsA.innerHTML);
