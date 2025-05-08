@@ -4,6 +4,13 @@ const ereorF = document.getElementById("errorF");
 const togglePassword = document.getElementById('togglePassword');
 const passwordInput = document.getElementById('password');
 
+window.addEventListener('load', () => {
+  const loader = document.getElementById('right-loader');
+  if (loader) {
+      loader.style.display = 'none';
+  }
+});
+
 
 togglePassword.addEventListener('click', function () {
     const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -61,3 +68,4 @@ form.addEventListener("submit", function(event) {
     event.preventDefault();
     register();
 });
+
