@@ -254,6 +254,10 @@ body {
     color: white;
 }
 
+.buttons{
+    flex-direction: column;
+}
+
 .space {
     width: 20%;
 }
