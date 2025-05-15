@@ -14,7 +14,26 @@ qnum.innerHTML = num
 
     point.innerHTML = `${p}`;
     point2.innerHTML = `${p}`;
+    point.innerHTML = `${p}`;
+    point2.innerHTML = `${p}`;
+    
 
+
+    const scoreMessageElement = document.getElementById("scoreMessage");
+    let scoreMessage = "";
+    if (Number(p) >= 100) {
+        scoreMessage = "profesionalac!";
+    }else if (Number(p) >= 50) {
+        scoreMessage = "odlićan rezultat!";
+    } else if (Number(p) > 20) {
+        scoreMessage = "dobar rezultat!";
+    } else if (Number(p) >= 10) {
+        scoreMessage = "Svaka cast";
+    } else {
+        scoreMessage = "Vise srece drugi put";
+    }
+    scoreMessageElement.innerHTML = scoreMessage;
+    
     if(timeT == "true"){
         h2.innerHTML = "Isteklo je vrijeme!"
         localStorage.removeItem("timeT")

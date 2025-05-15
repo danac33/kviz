@@ -495,6 +495,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border: 1px solid #d0dcf2;
+          border: 3px solid #007bff;
   }
   
   .quiz-title {
@@ -747,6 +748,9 @@ body {
 /*phone responsive part*/
 
 @media screen and (max-width: 400px) {
+    .quiz-card{
+        width: 90vw;
+    }
     input, textarea {
         font-size: 16px; 
       }
